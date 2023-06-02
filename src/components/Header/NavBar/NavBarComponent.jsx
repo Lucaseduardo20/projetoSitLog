@@ -7,11 +7,11 @@ export default function NavBarComponent () {
     return (
         <>
             <NavBarStyled>
-                <li>NOSSOS SERVIÇOS</li>
-                <li>QUEM SOMOS</li>
-                <li>COTAÇÃO</li>
-                <li>PARCEIROS</li>
-                <li>FEEDBACKS</li>
+                <a href="#"><li>NOSSOS SERVIÇOS</li></a>
+                <a href="#"><li>QUEM SOMOS</li></a>
+                <a href="#"><li>COTAÇÃO</li></a>
+                <a href="#"><li>PARCEIROS</li></a>
+                <a href="#"><li>FEEDBACKS</li></a>
             </NavBarStyled>
         </>
     )
