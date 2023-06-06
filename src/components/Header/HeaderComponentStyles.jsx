@@ -31,13 +31,12 @@ export const HeaderTop = styled.div `
 
 
 export const HeaderBottom = styled.div `
-    // border: 3px solid red;
     height: 75%;
     background-color: transparent;
     display: flex;
     align-items: center;
-    justify-content: space-beetwen;
-    padding: 0 0 0 15%;
+    margin: 0 0 0 15%;
+    justify-content: space-between;
 
     >img {
         width: 130px;
