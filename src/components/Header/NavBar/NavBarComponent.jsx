@@ -18,7 +18,7 @@ export default function NavBarComponent () {
                 <a href="#"><li>PARCEIROS</li></a>
                 <a href="#"><li>FEEDBACKS</li></a>
                 {!isInput && (
-                    <a onClick={() => {setIsInput(!isInput)}} href="">
+                    <a onClick={() => {setIsInput(!isInput)}}>
                         <FaSearch></FaSearch>
                     </a>
                 )}
