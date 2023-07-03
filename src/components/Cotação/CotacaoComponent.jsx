@@ -4,11 +4,21 @@ import { Line } from 'rc-progress';
 
 export default function CotacaoComponent() {
     const [progress, setProgress] = useState(0);
+    const [fieldList, setFieldList] = useState([])
 
 
-    const menageProgress = (value) => {
-        cpnsole.log(value)
-    }
+    const manageProgress = (value, field) => {
+        let updatedList = fieldList;
+
+        if (value && !updatedList.includes(field)) {
+            updatedList = [... updatedList, field]
+        } else if (!value && updatedList.includes(field)) {
+            updatedList = updatedList.filter(item => item !== field);
+        }
+
+        setFieldList(updatedList)
+        setProgress((updatedList.length * 20))
+    };
     return (
                 <CotacaoContent>
                     <CotacaoArticle>
@@ -17,11 +27,11 @@ export default function CotacaoComponent() {
                             <p>Solicite sua cotação e fale com um de nossos consultores.</p>
                         </CotacaoHeader>
                         <CotacaoForm>
-                            <input type="text" class="styled-input" placeholder="Nome Completo" onBlur={e => menageProgress(e)}/>
-                            <input type="text" class="styled-input" placeholder="Telefone" onBlur={e => menageProgress(e.target.value)}/>
-                            <input type="text" class="styled-input" placeholder="E-mail" onBlur={e => menageProgress(e.target.value)}/>
-                            <input type="text" class="styled-input" placeholder="Empresa" onBlur={e => menageProgress(e.target.value)}/>
-                            <input type="text" class="styled-input" placeholder="CPF/CNPJ" onBlur={e => menageProgress(e.target.value)}/>
+                            <input type="text" class="styled-input" placeholder="Nome Completo" onBlur={e => manageProgress(e.target.value, 'nome')}/>
+                            <input type="text" class="styled-input" placeholder="Telefone" onBlur={e => manageProgress(e.target.value, 'tel')}/>
+                            <input type="text" class="styled-input" placeholder="E-mail" onBlur={e => manageProgress(e.target.value, 'email')}/>
+                            <input type="text" class="styled-input" placeholder="Empresa" onBlur={e => manageProgress(e.target.value, 'empresa')}/>
+                            <input type="text" class="styled-input" placeholder="CPF/CNPJ" onBlur={e => manageProgress(e.target.value, 'cpf')}/>
                             <button id="submit"> ENVIAR</button>
                         </CotacaoForm>
                     <CotacaoProgress>
@@ -30,7 +40,7 @@ export default function CotacaoComponent() {
                             percent={progress}
                             strokeWidth={5}
                             trailWidth={5}
-                            strokeColor="#9E1E33"
+                            strokeColor={progress == 0 ? '' : '#9E1E33'}
                             trailColor="#4f0f19"
                             strokeLinecap="round"
                             style={{ position: 'relative', width: '50%' }}

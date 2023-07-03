@@ -69,6 +69,10 @@ export const CotacaoForm = styled.div `
             font-size: 26px;
             font-family: Calibri;
         }
+
+        &:focus {
+            outline: none;
+        }
     }
 
     >button {
