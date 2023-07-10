@@ -24,7 +24,7 @@ export default function NavBarComponent () {
                 )}
 
                 {isInput && (
-                    <SearchComponent setIsInput={setIsInput}></SearchComponent>
+                    <SearchComponent setIsInput={setIsInput} isInput={isInput}></SearchComponent>
                 )}
 
             </NavBarStyled>

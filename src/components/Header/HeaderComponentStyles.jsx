@@ -27,6 +27,10 @@ export const HeaderTop = styled.div `
             fill: red;
         }
     }
+
+    @media (max-width: 1024px) {
+        padding: 0;
+    }
 `
 
 
@@ -37,9 +41,14 @@ export const HeaderBottom = styled.div `
     align-items: center;
     margin: 0 0 0 15%;
     justify-content: space-between;
+    border: 2px solid green;
 
     >img {
         width: 130px;
         height: 90px;
+    }
+
+    @media (max-width: 1024px) {
+        margin: 0;
     }
 `

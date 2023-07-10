@@ -19,6 +19,10 @@ export const CotacaoArticle = styled.article `
     -webkit-box-shadow: 1px 2px 26px -2px rgba(0,0,0,1);
     -moz-box-shadow: 1px 2px 26px -2px rgba(0,0,0,1);
     box-shadow: 1px 2px 26px -2px rgba(0,0,0,1);
+
+    @media (max-width: 1024px) {
+        height: 70%;
+    }
 `
 
 export const CotacaoHeader = styled.div `
@@ -48,6 +52,22 @@ export const CotacaoHeader = styled.div `
         color: #000000;
         letter-spacing: -1px;
     }
+
+    @media (max-width: 1024px) {
+        width: 100%;
+        height: 15%;
+        h2 {
+            font-size: 25px;
+        }
+
+        span {
+            font-size: 25px;
+        }
+
+        p {
+            font-size: 10px;
+        }
+    }
 `
 
 export const CotacaoForm = styled.div `
@@ -62,11 +82,11 @@ export const CotacaoForm = styled.div `
         width: 35%;
         height: 50px;
         border: 1pt solid #707070;
-        font-size: 26px;
+        font-size: 22px;
+        padding-left: 20px;
 
         ::placeholder {
             color: #A2A2A2;
-            font-size: 26px;
             font-family: Calibri;
         }
 
@@ -96,7 +116,25 @@ export const CotacaoForm = styled.div `
 
     .styled-input::placeholder {
         position: absolute;
-        margin-left: 30px;
+    }
+
+    @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: center;
+
+        input {
+            width: 100%;
+            height: 35px;
+            font-size: 20px;
+        }
+
+        button {
+            width: 50%;
+            height: 30px;
+            font-size: 20px;
+            background: #b30220;
+            margin: 0;
+        }
     }
 `
 
@@ -114,5 +152,13 @@ export const CotacaoProgress = styled.div `
         font-weight: bold;
         font-size: 25px;
         z-index: 1;
+    }
+
+    @media (max-width: 1024px) {
+        height: 15%;
+
+        span {
+            font-size: 15px;
+        }
     }
 `
