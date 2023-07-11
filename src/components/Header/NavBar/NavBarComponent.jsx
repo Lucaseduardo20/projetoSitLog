@@ -10,24 +10,13 @@ export default function NavBarComponent () {
 
 
     return (
-        <>
-            <NavBarStyled>
-                <a href="#"><li>NOSSOS SERVIÇOS</li></a>
-                <a href="#"><li>QUEM SOMOS</li></a>
-                <a href="#"><li>COTAÇÃO</li></a>
-                <a href="#"><li>PARCEIROS</li></a>
-                <a href="#"><li>FEEDBACKS</li></a>
-                {!isInput && (
-                    <a onClick={() => {setIsInput(!isInput)}}>
-                        <FaSearch></FaSearch>
-                    </a>
-                )}
+        <NavBarStyled>
+            <li><a href="#">NOSSOS SERVIÇOS</a></li>
+            <li><a href="#">QUEM SOMOS</a></li>
+            <li><a href="#">COTAÇÃO</a></li>
+            <li><a href="#">PARCEIROS</a></li>
+            <li><a href="#">FEEDBACKS</a></li>
 
-                {isInput && (
-                    <SearchComponent setIsInput={setIsInput} isInput={isInput}></SearchComponent>
-                )}
-
-            </NavBarStyled>
-        </>
+        </NavBarStyled>
     )
 };

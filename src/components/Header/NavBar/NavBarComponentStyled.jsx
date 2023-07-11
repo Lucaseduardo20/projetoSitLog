@@ -1,24 +1,26 @@
 import styled from 'styled-components'
 
-
-
-
 export const NavBarStyled = styled.ul `
     list-style: none;
     display: flex;
-    margin: 0 10% 0 0;
+    // margin: 0 10% 0 0;
+    // border: 2px solid black;
+    margin: 0px 0px 0px 20%;
 
-    >a {
-        color: #1b1b1b;
+    >li {
         margin: 0 20px;
-        font-size: 13px;
-        text-decoration: none;
+        font-size: 17px;
         transition: .5s;
 
-        :hover{
-            color: red;
-            text-decoration: underline;
-            transition: .5s;
+        a {
+            color: #1b1b1b;
+            text-decoration: none;
+
+            :hover {
+                color: red;
+                // text-decoration: underline;
+                transition: .5s;
+            }
         }
     }
 

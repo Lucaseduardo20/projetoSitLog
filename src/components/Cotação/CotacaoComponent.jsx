@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CotacaoArticle, CotacaoHeader, CotacaoContent, CotacaoForm, CotacaoProgress } from "./CotacaoComponentStyled";
-import { Line } from 'rc-progress';
+import { Line } from 'rc-progress'
 
 export default function CotacaoComponent() {
     const [progress, setProgress] = useState(0);
