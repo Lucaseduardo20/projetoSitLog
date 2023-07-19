@@ -33,7 +33,11 @@ export default function HeaderComponent () {
                     {windowWidth <= 1024 && (
                         <FaBars></FaBars>
                     )}
-                    <NavBarComponent></NavBarComponent>
+                    
+                    {windowWidth > 1024 && (
+                        // <FaBars></FaBars>
+                        <NavBarComponent></NavBarComponent>
+                    )}
                 </HeaderBottom>
             </HeaderComponentStyles>
         </>

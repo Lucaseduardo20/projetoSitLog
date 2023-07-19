@@ -9,7 +9,7 @@ export const NavBarStyled = styled.ul `
 
     >li {
         margin: 0 20px;
-        font-size: 17px;
+        font-size: 16px;
         transition: .5s;
 
         a {
@@ -22,18 +22,13 @@ export const NavBarStyled = styled.ul `
                 transition: .5s;
             }
         }
-    }
 
-    
-    @media screen and (max-width: 768px) { // Estilos específicos para telas com largura máxima de 768px
-        
-    }
+        @media (max-width: 1024px) {
+            font-size: 13px;
+        }
 
-    @media screen and (min-width: 769px) and (max-width: 1024px) {
-        // Estilos específicos para telas com largura mínima de 769px e largura máxima de 1024px
-    }
-
-    @media screen and (min-width: 1025px) {
-        // Estilos específicos para telas com largura mínima de 1025px
+        @media (min-width: 1024px) and (max-width: 1400px) {
+            font-size: 13px;
+        }
     }
 `

@@ -28,7 +28,11 @@ export const HeaderTop = styled.div `
     }
 
     @media (max-width: 1024px) {
-        padding: 0;
+        justify-content: center;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1250px) {
+        padding: 0 7%;
     }
 `
 
@@ -39,13 +43,29 @@ export const HeaderBottom = styled.div `
     display: flex;
     align-items: center;
     padding: 0 15%;
+    border: 2px solid green;
 
 
     >img {
         width: 180px;
+
+        @media (max-width: 1024px) {
+            width: 180px;
+        }
+    }
+
+    >svg {
+        width: 80px;
+        height: 50px;
     }
 
     @media (max-width: 1024px) {
-        margin: 0;
+        padding: 0;
+        justify-content: space-around;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1250px) {
+        padding: 0 7%;
+        justify-content: space-between;
     }
 `

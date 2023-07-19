@@ -27,11 +27,11 @@ export default function CotacaoComponent() {
                             <p>Solicite sua cotação e fale com um de nossos consultores.</p>
                         </CotacaoHeader>
                         <CotacaoForm>
-                            <input type="text" class="styled-input" placeholder="Nome Completo" onBlur={e => manageProgress(e.target.value, 'nome')}/>
-                            <input type="text" class="styled-input" placeholder="Telefone" onBlur={e => manageProgress(e.target.value, 'tel')}/>
-                            <input type="text" class="styled-input" placeholder="E-mail" onBlur={e => manageProgress(e.target.value, 'email')}/>
-                            <input type="text" class="styled-input" placeholder="Empresa" onBlur={e => manageProgress(e.target.value, 'empresa')}/>
-                            <input type="text" class="styled-input" placeholder="CPF/CNPJ" onBlur={e => manageProgress(e.target.value, 'cpf')}/>
+                            <input type="text" className="styled-input" placeholder="Nome Completo" onBlur={e => manageProgress(e.target.value, 'nome')}/>
+                            <input type="text" className="styled-input" placeholder="Telefone" onBlur={e => manageProgress(e.target.value, 'tel')}/>
+                            <input type="text" className="styled-input" placeholder="E-mail" onBlur={e => manageProgress(e.target.value, 'email')}/>
+                            <input type="text" className="styled-input" placeholder="Empresa" onBlur={e => manageProgress(e.target.value, 'empresa')}/>
+                            <input type="text" className="styled-input" placeholder="CPF/CNPJ" onBlur={e => manageProgress(e.target.value, 'cpf')}/>
                             <button id="submit"> ENVIAR</button>
                         </CotacaoForm>
                     <CotacaoProgress>
