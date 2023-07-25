@@ -43,7 +43,6 @@ export const HeaderBottom = styled.div `
     display: flex;
     align-items: center;
     padding: 0 15%;
-    border: 2px solid green;
 
 
     >img {

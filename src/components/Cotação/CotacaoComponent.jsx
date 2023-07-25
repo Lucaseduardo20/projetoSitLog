@@ -32,7 +32,7 @@ export default function CotacaoComponent() {
                             <input type="text" className="styled-input" placeholder="E-mail" onBlur={e => manageProgress(e.target.value, 'email')}/>
                             <input type="text" className="styled-input" placeholder="Empresa" onBlur={e => manageProgress(e.target.value, 'empresa')}/>
                             <input type="text" className="styled-input" placeholder="CPF/CNPJ" onBlur={e => manageProgress(e.target.value, 'cpf')}/>
-                            <button id="submit"> ENVIAR</button>
+                            <button id="submit">ENVIAR</button>
                         </CotacaoForm>
                     <CotacaoProgress>
                         <span>{progress}%</span>

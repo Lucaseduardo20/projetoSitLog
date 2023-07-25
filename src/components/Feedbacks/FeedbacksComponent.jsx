@@ -103,6 +103,7 @@ export default function Feedbacks () {
         </FeedbacksStyled>
     )
 }
+
 // {feedbacks.map(feedback => (
 //     <div>
 //         <div className="feedback-header">

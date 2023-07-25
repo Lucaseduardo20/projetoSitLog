@@ -153,6 +153,7 @@ export const CotacaoForm = styled.div `
     @media (max-width: 1024px) {
         flex-direction: column;
         align-items: center;
+        height: 60%;
 
         input {
             width: 100%;
@@ -190,7 +191,7 @@ export const CotacaoProgress = styled.div `
         height: 15%;
 
         span {
-            font-size: 15px;
+            font-size: 13px;
         }
     }
 
