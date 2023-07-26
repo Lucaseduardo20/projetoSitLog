@@ -57,7 +57,7 @@ export const CotacaoHeader = styled.div `
         letter-spacing: -1px;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 900px) {
         width: 100%;
         height: 15%;
         h2 {
@@ -150,7 +150,7 @@ export const CotacaoForm = styled.div `
         position: absolute;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 900px) {
         flex-direction: column;
         align-items: center;
         height: 60%;

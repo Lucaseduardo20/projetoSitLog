@@ -4,6 +4,7 @@ import HeaderComponent from './components/Header/HeaderComponent'
 import CotacaoComponent from './components/Cotação/CotacaoComponent'
 import Feedbacks from './components/Feedbacks/FeedbacksComponent'
 import Home from './components/Home/HomeComponent'
+import { Footer } from './components/Footer/FooterComponent'
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
       <Home />
       <CotacaoComponent />
       <Feedbacks />
+      <Footer />
     </>
   )
 }
