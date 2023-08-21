@@ -2,6 +2,7 @@ import React from "react";
 import { FooterContainer, FooterContent, FooterInfos, FooterStreetView } from "./FooterStyled";
 import LogoBranco from '../../assets/img/logo-sitlog-branco.png'
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaBars } from 'react-icons/fa';
+import ReactStreetview from 'react-streetview';
 
 export const Footer = () => {
     return (
@@ -19,10 +20,11 @@ export const Footer = () => {
                             <FaWhatsapp />
                             <FaLinkedinIn />
                         </div>
-
                     </div>
                 </FooterInfos>
-                <FooterStreetView></FooterStreetView>
+                <FooterStreetView>
+
+                </FooterStreetView>
             </FooterContent>
         </FooterContainer>
     )

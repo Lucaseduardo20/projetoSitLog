@@ -25,7 +25,7 @@ export const FooterInfos = styled.div `
     justify-content: space-evenly;
 
     >img {
-        width: 200px;
+        width: 250px;
         margin: 0 0 15px 10px;
     }
 
