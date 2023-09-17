@@ -5,6 +5,7 @@ import CotacaoComponent from './components/Cotação/CotacaoComponent'
 import Feedbacks from './components/Feedbacks/FeedbacksComponent'
 import Home from './components/Home/HomeComponent'
 import { Footer } from './components/Footer/FooterComponent'
+import ServicosComponent from './components/Serviços/Servicos'
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
 
       <HeaderComponent />
       <Home />
+      <ServicosComponent />
       <CotacaoComponent />
       <Feedbacks />
       <Footer />
