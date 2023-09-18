@@ -11,6 +11,11 @@ export const ServicosStyled = styled.section`
     background: url(${background}) no-repeat;
     background-size: 100%;
     background-position: center;
+
+    @media (max-width: 800px) {
+        background: none;
+        height: 100vh;
+    }
 `
 
 export const ServicosHeader = styled.div `
@@ -43,6 +48,15 @@ export const ServicosHeader = styled.div `
             color: white;
         }
     }
+
+    @media (max-width: 800px) {
+        width: 100%;
+        flex-direction: column;
+
+        h1 {
+            font-size: 60px;
+        }
+    }
 `
 
 export const ServicosContent = styled.div `
@@ -52,6 +66,13 @@ export const ServicosContent = styled.div `
     align-items: center;
     justify-content: space-around;
     margin: 0 0 200px 0;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+        border: 3px solid blue;
+        width: 100%;
+        height: 70%;
+    }
 `
 
 export const ServicoItem = styled.div `
@@ -90,9 +111,15 @@ export const ServicoItem = styled.div `
         margin: 30px 0 0 0;
 
         transition: font-size 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+        @media (max-width: 800px) {
+            width: 100%;
+            line-height: 1
+        }
     }
 
     >img {
+        width: 60%;
         transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
         transform: scale(${props => props.servico.isActive ? '1.1' : '1'});
     }
@@ -100,5 +127,20 @@ export const ServicoItem = styled.div `
     :hover {
         cursor: pointer;
         border: 2px solid red;
+    }
+
+    @media (max-width: 800px) {
+        border: 1px solid red;
+        border-radius: 20px;
+        width: 80%;
+
+        img {
+            width: 19%;
+            height: 30%;
+        }
+
+        >p {
+            margin: 0;
+        }
     }
 `

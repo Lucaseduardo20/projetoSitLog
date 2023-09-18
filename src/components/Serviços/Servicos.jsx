@@ -9,7 +9,7 @@ export default function ServicosComponent() {
     const [data, setData] = useState([
         {
             'nome': 'Fracionada',
-            'isActive': true,
+            'isActive': false,
             'imagem': Fracionada,
             'texto': 'Em termos simples, a carga fracionada é um tipo de serviço no qual o embarcador paga somente pelo espaço no caminhão utilizado pela sua remessa. Dessa forma, o custo com o transporte é fracionado entre outras cargas e, portanto, diminuído.'
         },
@@ -26,14 +26,41 @@ export default function ServicosComponent() {
             'texto': 'Por definição, carga expressa é aquela que demanda alta prioridade, com entrega pontual e no menor tempo possível. A entrega expressa costuma se dar de ponta a ponta e, a depender da distância, envolve o modal aéreo.'
         }
     ]);
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+    });
+    
+    const isMobile = windowSize.width <= 800;
+
+    useEffect(() => {
+        // Função para atualizar o estado com as novas dimensões da janela
+        function handleResize() {
+          setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+          });
+        }
+        window.addEventListener('resize', handleResize);
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
  
     const HandleActivate = (servico, isActive) => {
-        const updatedData = data.map(item => {
-            if (item.nome === servico) {
-                return { ...item, isActive: isActive };
-            }
-            return item;
-        });
+        var updatedData;
+        if(servico === 'todos') {
+            updatedData = data.map(item => {
+                return {...item, isActive: true}
+            })
+        } else {
+            updatedData = data.map(item => {
+                if (item.nome === servico) {
+                    return { ...item, isActive: isActive };
+                }
+                return item;
+            });
+        }
 
         setData(updatedData)
     }
@@ -46,24 +73,24 @@ export default function ServicosComponent() {
             <ServicosHeader>
                 <div>
                     <h1 style={{
-                        color: '#FFFFFF',
+                        color: `${!isMobile ? 'white' : 'black'}`,
 
                     }}>NOSSOS</h1><br />
                     <h1 style={{
                         color: '#FF0E38',
                         marginTop: '-40px',
-                    }}>SERVICOS</h1>
+                    }}>SERVIÇOS</h1>
                 </div>
-                <button>SAIBA MAIS</button>
+                {!isMobile && 
+                    <button onClick={() => HandleActivate('todos', true)}>SAIBA MAIS</button>
+                }
             </ServicosHeader>
             <ServicosContent>
                     {data.map((servico) => 
-                        <ServicoItem servico={servico} onClick={() => HandleActivate(servico.nome, true)} onMouseLeave={() => HandleActivate(servico.nome, false)} key={servico.nome} className={servico.nome}>
-                            <img style={{
-                                width: '60%',
-                            }} src={servico.imagem} alt="" />
+                        <ServicoItem servico={servico} onClick={() => HandleActivate(servico.nome, !servico.isActive)} key={servico.nome} className={servico.nome}>
+                            <img src={servico.imagem} alt="" />
                             <span><strong>{`CARGA ${servico.nome.toUpperCase()}`}</strong></span>
-                            {servico.isActive && 
+                            {(servico.isActive || isMobile)  && 
                                 <p>{servico.texto}</p>
                             }
                         </ServicoItem>
