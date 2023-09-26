@@ -90,7 +90,7 @@ export default function ServicosComponent() {
                         <ServicoItem servico={servico} onClick={() => HandleActivate(servico.nome, !servico.isActive)} key={servico.nome} className={servico.nome}>
                             <img src={servico.imagem} alt="" />
                             <span><strong>{`CARGA ${servico.nome.toUpperCase()}`}</strong></span>
-                            {(servico.isActive || isMobile)  && 
+                            {(servico.isActive)  && 
                                 <p>{servico.texto}</p>
                             }
                         </ServicoItem>

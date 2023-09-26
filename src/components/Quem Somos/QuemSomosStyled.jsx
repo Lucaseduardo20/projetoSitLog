@@ -1,74 +1,63 @@
 import styled from "styled-components";
-import background from './servicos-background.png'
+// import background from './QuemSomos-background.png'
 
-export const ServicosStyled = styled.section`
+export const QuemSomosStyled = styled.section`
     width: 100%;
     height: 110vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background: url(${background}) no-repeat;
     background-size: 100%;
     background-position: center;
     
     
-    @media (max-width: 800px) {
-        background: none;
-        height: 100vh;
-        justify-content: space-around;
-        flex-direction: column;
-    }
-    `
-    
-    export const ServicosHeader = styled.div `
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    h1 {
-        font-family: Calibri;
-        font-style: italic;
-        font-size: 90px;
-        margin: 0;
-    }
-
-    button {
-        width: 290px;
-        height: 60px;
-        font-size: 36px;
-        font-weight: bold;
-        background-color: transparent;
-        color: #FF0E38;
-        border: 3px solid #FF0E38;
-        border-radius: 20px;
-        transition: .5s;
-
-        :hover {
-            cursor: pointer;
-            background-color: #FF0E38;
-            color: white;
-        }
-    }
-
-    @media (max-width: 800px) {
-        width: 100%;
-        flex-direction: column;
-
-        h1 {
-            font-size: 60px;
-        }
-    }
+    // @media (max-width: 800px) {
+    //     background: none;
+    //     height: 100vh;
+    //     justify-content: space-around;
+    //     flex-direction: column;
+    // }
 `
 
-export const ServicosContent = styled.div `
-    width: 50%;
-    height: 200px;
+export const QuemSomosContent = styled.div `
+    width: 70%;
+    height: 90%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin: 0 0 200px 0;
+
+    img {
+        width: 50%;
+        height: 100%;
+
+    }
+
+    #quem-somos {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            font-size: 120px;
+            font-family: Arial;
+            font-style: italic;
+            letter-spacing: -10px;
+        }
+    }
+
+    #quem-somos-text {
+        height: 70%;
+        width: 90%;
+        text-align: center;
+
+        p {
+            font-size: 18px
+        }
+    }
+
 
     @media (max-width: 800px) {
         flex-direction: column;

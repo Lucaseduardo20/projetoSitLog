@@ -6,6 +6,7 @@ import Feedbacks from './components/Feedbacks/FeedbacksComponent'
 import Home from './components/Home/HomeComponent'
 import { Footer } from './components/Footer/FooterComponent'
 import ServicosComponent from './components/Serviços/Servicos'
+import { QuemSomos } from './components/Quem Somos/QuemSomos'
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
       <HeaderComponent />
       <Home />
       <ServicosComponent />
+      <QuemSomos />
       <CotacaoComponent />
       <Feedbacks />
       <Footer />
