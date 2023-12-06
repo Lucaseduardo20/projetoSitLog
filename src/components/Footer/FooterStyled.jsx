@@ -14,6 +14,20 @@ export const FooterContainer = styled.footer `
         width: 80%;
         height: 70%;
     }
+
+    #footer-last-infos {
+        width: 30%;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        >span {
+            color: white;
+            font-family: Calibri;
+        }
+    }
 `
     
 export const FooterContent = styled.div `
@@ -66,7 +80,28 @@ export const FooterStreetView = styled.div `
     `
     
 export const FooterNav = styled.div `    
-    border: 2px solid red;
+    // border: 2px solid red;
     width: 50%;
     height: 50px;
+
+    >ul {
+        display: flex;
+        justify-content: space-between;
+
+        >li {
+            list-style: none;
+
+            >a {
+                text-decoration: none;
+                color: white;
+                font-family: Calibri;
+                transition: .5s;
+
+                :hover {
+                    color: red;
+                    border-bottom: 2px solid red;
+                }
+            }
+        }
+    }
 `

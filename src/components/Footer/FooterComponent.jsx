@@ -31,8 +31,18 @@ export const Footer = () => {
                 </FooterContent>
             </div>
             <FooterNav>
+                <ul>
+                    <li><a href="#servicos">NOSSOS SERVIÇOS</a></li>
+                    <li><a href="#quem-somos">QUEM SOMOS</a></li>
+                    <li><a href="#cotacao">COTAÇÃO</a></li>
+                    {/* <li><a href="">PARCEIROS</a></li> */}
+                    <li><a href="#feedbacks">FEEDBACKS</a></li>
+                </ul>
             </FooterNav>
-            <div id="footer-last-infos"></div>
+            <div id="footer-last-infos">
+                <span>&#x24B8; Todos os direitos reservados SitLog 2023.</span>
+                <span>By Imported Code.</span>
+            </div>
         </FooterContainer >
     )
 }

@@ -29,7 +29,7 @@ export default function Feedbacks () {
     // ]
 
     return (
-        <FeedbacksStyled>
+        <FeedbacksStyled id='feedbacks'>
             <h2>Avaliações</h2>
             <article>
                 <div>

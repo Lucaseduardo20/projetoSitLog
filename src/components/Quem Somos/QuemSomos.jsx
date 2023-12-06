@@ -4,7 +4,7 @@ import img from '../Quem Somos/quem-somos.png'
 
 export const QuemSomos = () => {
     return (
-        <QuemSomosStyled>
+        <QuemSomosStyled id="quem-somos">
             <QuemSomosContent>
                 <img src={img} />
                 <div id="quem-somos">

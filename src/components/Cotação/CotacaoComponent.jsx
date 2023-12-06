@@ -52,7 +52,7 @@ export default function CotacaoComponent() {
         }
     }
     return (
-                <CotacaoContent>
+                <CotacaoContent id="cotacao">
                     <CotacaoArticle>
                         <CotacaoHeader>
                             <h2>COTAÇÃO</h2> <span>RÁPIDA</span>

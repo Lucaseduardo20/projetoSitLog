@@ -35,11 +35,11 @@ export default function NavBarComponent() {
         <>
             {windowWidth > 1024 &&
                 <NavBarStyled>
-                    <li><a href="#">NOSSOS SERVIÇOS</a></li>
-                    <li><a href="#">QUEM SOMOS</a></li>
-                    <li><a href="#">COTAÇÃO</a></li>
-                    <li><a href="#">PARCEIROS</a></li>
-                    <li><a href="#">FEEDBACKS</a></li>
+                    <li><a href="#servicos">NOSSOS SERVIÇOS</a></li>
+                    <li><a href="#quem-somos">QUEM SOMOS</a></li>
+                    <li><a href="#cotacao">COTAÇÃO</a></li>
+                    {/* <li><a href="#parceiros">PARCEIROS</a></li> */}
+                    <li><a href="#feedbacks">FEEDBACKS</a></li>
 
                 </NavBarStyled>
             }
@@ -48,11 +48,11 @@ export default function NavBarComponent() {
             }
                 <NavBarMobile isActive={navBarMobile}>
                     <a href="" style={{fontSize: '20px'}} onClick={(e) => handleNavMobile(e)}>X</a>
-                    <a href="">NOSSOS SERVIÇOS</a>
-                    <a href="">QUEM SOMOS</a>
-                    <a href="">COTAÇÃO</a>
-                    <a href="">PARCEIROS</a>
-                    <a href="">FEEDBACKS</a>
+                    <a href="#servicos">NOSSOS SERVIÇOS</a>
+                    <a href="#quem-somos">QUEM SOMOS</a>
+                    <a href="#cotacao">COTAÇÃO</a>
+                    {/* <a href="#parceiros">PARCEIROS</a> */}
+                    <a href="#feedbacks">FEEDBACKS</a>
                 </NavBarMobile>
 
         </>
