@@ -5,20 +5,27 @@ export const FooterContainer = styled.footer `
     height: 70vh;
     background-color: #191919;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    #footer-location {
+        display: flex;
+        width: 80%;
+        height: 70%;
+    }
 `
     
 export const FooterContent = styled.div `
-    width: 80%;
-    height: 75%;
+    width: 100%;
+    height: 100%;
     // border: 5px solid yellow;
-    margin: 30px 0 0 0;
+    // margin: 30px 0 0 0;
     display: flex;
 `
 
 export const FooterInfos = styled.div `
     width: 50%;
-    // border: 2px solid green;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -56,5 +63,10 @@ export const FooterInfos = styled.div `
 `
 export const FooterStreetView = styled.div `
     width: 50%;
+    `
+    
+export const FooterNav = styled.div `    
     border: 2px solid red;
+    width: 50%;
+    height: 50px;
 `
