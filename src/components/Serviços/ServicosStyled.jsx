@@ -20,8 +20,8 @@ export const ServicosStyled = styled.section`
         flex-direction: column;
     }
     `
-    
-    export const ServicosHeader = styled.div `
+
+export const ServicosHeader = styled.div`
     width: 60%;
     display: flex;
     align-items: center;
@@ -50,6 +50,10 @@ export const ServicosStyled = styled.section`
             background-color: #FF0E38;
             color: white;
         }
+
+        @media (max-width: 1000px) {
+            font-size: 26px;
+        }
     }
 
     @media (max-width: 800px) {
@@ -62,7 +66,7 @@ export const ServicosStyled = styled.section`
     }
 `
 
-export const ServicosContent = styled.div `
+export const ServicosContent = styled.div`
     width: 50%;
     height: 200px;
     display: flex;
@@ -78,7 +82,7 @@ export const ServicosContent = styled.div `
     }
 `
 
-export const ServicoItem = styled.div `
+export const ServicoItem = styled.div`
     width: ${props => props.servico.isActive ? '220px' : '200px'};
     height: ${props => props.servico.isActive ? '570px' : '200px'};
     border-radius: ${props => props.servico.isActive ? '0' : '50%'};
@@ -88,6 +92,10 @@ export const ServicoItem = styled.div `
     align-items: center;
     flex-direction: column;
     padding: ${props => props.servico.isActive ? '15px' : '0'};
+    -webkit-box-shadow: 0px 0px 8px 4px rgba(247,111,111,1);
+    -moz-box-shadow: 0px 0px 8px 4px rgba(247,111,111,1);
+    box-shadow: ${props => props.servico.isActive ? '0px 0px 8px 4px rgba(247,111,111,1);' : 'none'};
+    position: relative;
 
     // transition: width 0.3s ease, height 0.4s ease, border-radius 0.3s ease, justify-content 0.3s ease, padding 0.3s ease;
     transition: 
@@ -127,13 +135,8 @@ export const ServicoItem = styled.div `
         transform: scale(${props => props.servico.isActive ? '1.1' : '1'});
     }
 
-    :hover {
-        cursor: pointer;
-        border: 2px solid red;
-    }
-
     @media (max-width: 800px) {
-        border: 1px solid red;
+        border: ${props => props.servico.isActive ? '1px solid red' : 'none'};
         border-radius: ${props => props.servico.isActive ? '20px' : '40px'};
         width: ${props => props.servico.isActive ? '90%' : '50%'};
         height: ${props => props.servico.isActive ? '30%' : '20%'};
@@ -145,7 +148,42 @@ export const ServicoItem = styled.div `
 
         >p {
             font-size: 12px;
+            font-family: Calibri;
             margin: 0;
+        }
+    }
+
+    .know-more-button {
+        width: 20px;
+        height: 20px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 10px;
+        background-color: #d20226;
+        font-size: 18px;
+        font-family: Roboto;
+        font-weight: bold;
+    }
+    .know-more-button-desktop {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 50%;
+        background-color: #d20226;
+        font-size: 30px;
+        padding: auto;
+        font-family: Roboto;
+        position: absolute;
+        bottom: -25px;
+        cursor: pointer;
+        transition: .2s;
+        color: white;
+    
+        :hover {
+            box-shadow: 0px 0px 4px 2px #d20226;
+            color: black;
+            // border: 1px solid white;
         }
     }
 `

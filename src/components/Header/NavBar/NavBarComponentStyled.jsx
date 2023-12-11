@@ -3,32 +3,55 @@ import styled from 'styled-components'
 export const NavBarStyled = styled.ul `
     list-style: none;
     display: flex;
+    width: 700px;
+    justify-content: space-between;
     // margin: 0 10% 0 0;
     // border: 2px solid black;
-    margin: 0px 0px 0px 20%;
+    // margin-left: 30%;
 
     >li {
         margin: 0 20px;
-        font-size: 16px;
+        font-size: 18px;
+        font-weight: bold;
         transition: .5s;
+        font-family: Calibri;
 
+        :hover {
+            // font-size: 16px;
+        }
+        
         a {
             color: #1b1b1b;
             text-decoration: none;
-
-            :hover {
-                color: red;
-                // text-decoration: underline;
-                transition: .5s;
+            position: relative;
+            transition: color 0.3s ease;
+        
+            ::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: -5px;
+                left: 0;
+                background-color: #000;
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: all 0.3s ease-in-out;
+            }
+        
+            :hover::after {
+                visibility: visible;
+                transform: scaleX(1);
             }
         }
-
-        @media (max-width: 1024px) {
-            font-size: 13px;
-        }
-
-        @media (min-width: 1024px) and (max-width: 1400px) {
-            font-size: 13px;
+        
+        
+        
+        
+        
+            :hover::after {
+                transform: scaleX(1);
+            }
         }
     }
 `

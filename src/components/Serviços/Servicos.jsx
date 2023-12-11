@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ServicosStyled, ServicosHeader, ServicosContent, ServicoItem } from "./ServicosStyled";
+import { FiChevronUp, FiChevronDown } from "react-icons/fi";
+import { IoIosMore } from "react-icons/io";
 import { useEffect } from "react";
 import Expressa from './expressa.png'
 import Fracionada from './fracionada.png'
@@ -30,28 +32,28 @@ export default function ServicosComponent() {
         width: window.innerWidth,
         height: window.innerHeight,
     });
-    
+
     const isMobile = windowSize.width <= 800;
 
     useEffect(() => {
         // Função para atualizar o estado com as novas dimensões da janela
         function handleResize() {
-          setWindowSize({
-            width: window.innerWidth,
-            height: window.innerHeight,
-          });
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
         }
         window.addEventListener('resize', handleResize);
         return () => {
-          window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleResize);
         };
-      }, []);
- 
+    }, []);
+
     const HandleActivate = (servico, isActive) => {
         var updatedData;
-        if(servico === 'todos') {
+        if (servico === 'todos') {
             updatedData = data.map(item => {
-                return {...item, isActive: true}
+                return { ...item, isActive: true }
             })
         } else {
             updatedData = data.map(item => {
@@ -64,8 +66,6 @@ export default function ServicosComponent() {
 
         setData(updatedData)
     }
-
-    console.log(data)
 
 
     return (
@@ -81,21 +81,28 @@ export default function ServicosComponent() {
                         marginTop: '-40px',
                     }}>SERVIÇOS</h1>
                 </div>
-                {!isMobile && 
+                {!isMobile &&
                     <button onClick={() => HandleActivate('todos', true)}>SAIBA MAIS</button>
                 }
             </ServicosHeader>
             <ServicosContent>
-                    {data.map((servico) => 
-                        <ServicoItem servico={servico} onClick={() => HandleActivate(servico.nome, !servico.isActive)} key={servico.nome} className={servico.nome}>
-                            <img src={servico.imagem} alt="" />
-                            <span><strong>{`CARGA ${servico.nome.toUpperCase()}`}</strong></span>
-                            {(servico.isActive)  && 
-                                <p>{servico.texto}</p>
-                            }
-                        </ServicoItem>
-                    )}
-                    {/* <img src={Expressa} alt="" /> */}
+                {data.map((servico) =>
+                    <ServicoItem servico={servico} key={servico.nome} className={servico.nome}>
+                        <img src={servico.imagem} alt="" />
+                        <span><strong>{`CARGA ${servico.nome.toUpperCase()}`}</strong></span>
+                        {(servico.isActive) &&
+                            <p>{servico.texto}</p>
+                        }
+                        {isMobile &&
+                            <button className="know-more-button" onClick={() => HandleActivate(servico.nome, !servico.isActive)}>{servico.isActive ? <FiChevronUp /> : <IoIosMore />}</button>
+                        }
+
+                        {!isMobile &&
+                            <button className="know-more-button-desktop" onClick={() => HandleActivate(servico.nome, !servico.isActive)}>{servico.isActive ? <FiChevronUp /> : <IoIosMore />}</button>
+                        }
+                    </ServicoItem>
+                )}
+                {/* <img src={Expressa} alt="" /> */}
             </ServicosContent>
         </ServicosStyled>
     )

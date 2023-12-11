@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FooterContainer = styled.footer `
+export const FooterContainer = styled.footer`
     width: 100%;
     height: 70vh;
     background-color: #191919;
@@ -29,8 +29,8 @@ export const FooterContainer = styled.footer `
         }
     }
 `
-    
-export const FooterContent = styled.div `
+
+export const FooterContent = styled.div`
     width: 100%;
     height: 100%;
     // border: 5px solid yellow;
@@ -38,7 +38,7 @@ export const FooterContent = styled.div `
     display: flex;
 `
 
-export const FooterInfos = styled.div `
+export const FooterInfos = styled.div`
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -75,11 +75,11 @@ export const FooterInfos = styled.div `
         }
     }
 `
-export const FooterStreetView = styled.div `
+export const FooterStreetView = styled.div`
     width: 50%;
     `
-    
-export const FooterNav = styled.div `    
+
+export const FooterNav = styled.div`    
     // border: 2px solid red;
     width: 50%;
     height: 50px;
@@ -90,16 +90,31 @@ export const FooterNav = styled.div `
 
         >li {
             list-style: none;
+            font-size: 16px;
+            font-family: Calibri;
 
             >a {
-                text-decoration: none;
                 color: white;
-                font-family: Calibri;
-                transition: .5s;
-
-                :hover {
-                    color: red;
-                    border-bottom: 2px solid red;
+                text-decoration: none;
+                position: relative;
+                transition: color 0.3s ease;
+            
+                ::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: -5px;
+                    left: 0;
+                    background-color: #FFF;
+                    visibility: hidden;
+                    transform: scaleX(0);
+                    transition: all 0.3s ease-in-out;
+                }
+            
+                :hover::after {
+                    visibility: visible;
+                    transform: scaleX(1);
                 }
             }
         }
