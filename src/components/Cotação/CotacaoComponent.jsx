@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CotacaoArticle, CotacaoHeader, CotacaoContent, CotacaoForm, CotacaoProgress } from "./CotacaoComponentStyled";
 import { cnpjMask, cpfMask } from "../../assets/utils/utils";
 import { Line } from 'rc-progress'
@@ -12,14 +12,18 @@ export default function CotacaoComponent() {
     const [cnpj, setCnpj] = useState()
     const [telefone, setTelefone] = useState()
     const [empresa, setEmpresa] = useState()
-    
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+    });
+
 
 
     const manageProgress = (value, field) => {
         let updatedList = fieldList;
 
         if (value && !updatedList.includes(field)) {
-            updatedList = [... updatedList, field]
+            updatedList = [...updatedList, field]
         } else if (!value && updatedList.includes(field)) {
             updatedList = updatedList.filter(item => item !== field);
         }
@@ -29,8 +33,8 @@ export default function CotacaoComponent() {
     };
 
     const submitCotacao = async () => {
-        if(!nome || !telefone || !email || !empresa || !cnpj) {
-           alert('Preencha os campos corretamente!') 
+        if (!nome || !telefone || !email || !empresa || !cnpj) {
+            alert('Preencha os campos corretamente!')
         } else if (!email.includes('@') || !email.includes('.com')) {
             alert('E-mail incorreto!')
         } else {
@@ -47,39 +51,82 @@ export default function CotacaoComponent() {
             cnpj: cnpj
         })
 
-        if(response.status === 200) {
+        if (response.status === 200) {
             alert('Em breve um consultor entrará em contato com você. Obrigado!')
         }
     }
+
+
+
+    const isMobile = windowSize.width <= 800;
+
+    useEffect(() => {
+        // Função para atualizar o estado com as novas dimensões da janela
+        function handleResize() {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        }
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     return (
-                <CotacaoContent id="cotacao">
-                    <CotacaoArticle>
-                        <CotacaoHeader>
-                            <h2>COTAÇÃO</h2> <span>RÁPIDA</span>
-                            <p>Solicite sua cotação e fale com um de nossos consultores.</p>
-                        </CotacaoHeader>
-                        <CotacaoForm>
-                            <input type="text" className="styled-input" value={nome} placeholder="Nome Completo" onChange={e => setNome(e.target.value)} onBlur={e => manageProgress(e.target.value, 'nome')}/>
-                            <input type="text" className="styled-input" value={telefone} placeholder="Telefone" onChange={e => setTelefone(e.target.value)} onBlur={e => manageProgress(e.target.value, 'tel')}/>
-                            <input type="text" className="styled-input" value={email} placeholder="E-mail" onChange={e => setEmail(e.target.value)} onBlur={e => manageProgress(e.target.value, 'email')}/>
-                            <input type="text" className="styled-input" value={empresa} placeholder="Empresa" onChange={e => setEmpresa(e.target.value)} onBlur={e => manageProgress(e.target.value, 'empresa')}/>
-                            <input type="text" className="styled-input" value={cnpj} placeholder="CPF/CNPJ" onChange={e => setCnpj(e.target.value)} onBlur={e => {manageProgress(e.target.value, 'cpf'); setCnpj(`${e.target.value.length > 11 ? cnpjMask(e.target.value) : cpfMask(e.target.value)}`)}}/>
-                            <button id="submit" onClick={e => submitCotacao()}>ENVIAR</button>
-                        </CotacaoForm>
-                    <CotacaoProgress>
-                        <span>{progress}%</span>
-                        <Line
-                            percent={progress}
-                            strokeWidth={5}
-                            trailWidth={5}
-                            strokeColor={progress == 0 ? '' : '#9E1E33'}
-                            trailColor="#4f0f19"
-                            strokeLinecap="round"
-                            style={{ position: 'relative', width: '50%' }}
-                        >
-                        </Line>
-                    </CotacaoProgress>
-                    </CotacaoArticle>
-                </CotacaoContent>
+        <CotacaoContent id="cotacao">
+            <CotacaoArticle>
+                <CotacaoHeader>
+                    <h2>COTAÇÃO</h2> <span>RÁPIDA</span>
+                    <p>Solicite sua cotação e fale com um de nossos consultores.</p>
+                </CotacaoHeader>
+                <CotacaoForm>
+                    <div className="input-box">
+                        {isMobile &&
+                            <label htmlFor="nome">Nome</label>
+                        }
+                        <input id="nome" type="text" className="styled-input" value={nome} placeholder={isMobile ? '' : 'Nome Completo'} onChange={e => setNome(e.target.value)} onBlur={e => manageProgress(e.target.value, 'nome')} />
+                    </div>
+                    <div className="input-box">
+                        {isMobile &&
+                            <label htmlFor="telefone">Telefone</label>
+                        }
+                        <input id="telefone" type="text" className="styled-input" value={telefone} placeholder={isMobile ? '' : 'Telefone'} onChange={e => setTelefone(e.target.value)} onBlur={e => manageProgress(e.target.value, 'tel')} />
+                    </div>
+                    <div className="input-box">
+                        {isMobile &&
+                            <label htmlFor="email">E-mail</label>
+                        }
+                        <input id="email" type="text" className="styled-input" value={email} placeholder={isMobile ? '' : 'E-Mail'} onChange={e => setEmail(e.target.value)} onBlur={e => manageProgress(e.target.value, 'email')} />
+                    </div>
+                    <div className="input-box">
+                        {isMobile &&
+                            <label htmlFor="empresa">Empresa</label>
+                        }
+                        <input id="empresa" type="text" className="styled-input" value={empresa} placeholder={isMobile ? '' : 'Empresa'} onChange={e => setEmpresa(e.target.value)} onBlur={e => manageProgress(e.target.value, 'empresa')} />
+                    </div>
+                    <div className="input-box">
+                        {isMobile &&
+                            <label htmlFor="cnpj">CPF/CNPJ</label>
+                        }
+                        <input id="cnpj" type="text" className="styled-input" value={cnpj} placeholder={isMobile ? '' : 'CPF/CNPJ'} onChange={e => setCnpj(e.target.value)} onBlur={e => { manageProgress(e.target.value, 'cpf'); setCnpj(`${e.target.value.length > 11 ? cnpjMask(e.target.value) : cpfMask(e.target.value)}`) }} />
+                    </div>
+                    <button id="submit" onClick={e => submitCotacao()}>ENVIAR</button>
+                </CotacaoForm>
+                <CotacaoProgress>
+                    <span>{progress}%</span>
+                    <Line
+                        percent={progress}
+                        strokeWidth={5}
+                        trailWidth={5}
+                        strokeColor={progress == 0 ? '' : '#9E1E33'}
+                        trailColor="#4f0f19"
+                        strokeLinecap="round"
+                        style={{ position: 'relative', width: '50%' }}
+                    >
+                    </Line>
+                </CotacaoProgress>
+            </CotacaoArticle>
+        </CotacaoContent>
     )
 }

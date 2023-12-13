@@ -1,12 +1,34 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import { QuemSomosStyled, QuemSomosContent } from "./QuemSomosStyled";
 import img from '../Quem Somos/quem-somos.png'
 
 export const QuemSomos = () => {
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+    });
+    const isMobile = windowSize.width <= 800;
+    
+    useEffect(() => {
+        // Função para atualizar o estado com as novas dimensões da janela
+        function handleResize() {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        }
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <QuemSomosStyled id="quem-somos">
             <QuemSomosContent>
-                <img src={img} />
+                {!isMobile &&
+                    <img src={img} />
+                }
                 <div id="quem-somos">
                     <h1>SIT<span style={{color: '#D90034'}}>LOG</span></h1>
                     <div id="quem-somos-text">

@@ -30,7 +30,7 @@ export default function Feedbacks () {
 
     return (
         <FeedbacksStyled id='feedbacks'>
-            <h2>Avaliações</h2>
+            <h2>FEEDBACKS</h2>
             <article>
                 <div>
                     <div className="feedback-header">

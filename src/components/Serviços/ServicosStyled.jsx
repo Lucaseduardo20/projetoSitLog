@@ -9,7 +9,7 @@ export const ServicosStyled = styled.section`
     justify-content: space-between;
     align-items: center;
     background: url(${background}) no-repeat;
-    background-size: 100%;
+    background-size: 110%;
     background-position: center;
     
     
@@ -136,13 +136,13 @@ export const ServicoItem = styled.div`
     }
 
     @media (max-width: 800px) {
-        border: ${props => props.servico.isActive ? '1px solid red' : 'none'};
+        border: ${props => props.servico.isActive ? 'none' : '1px solid red'};
         border-radius: ${props => props.servico.isActive ? '20px' : '40px'};
         width: ${props => props.servico.isActive ? '90%' : '50%'};
         height: ${props => props.servico.isActive ? '30%' : '20%'};
 
         img {
-            width: ${props => props.servico.isActive ? '19%' : '30%'};
+            width: ${props => props.servico.isActive ? '19%' : '25%'};
             height: 30%;
         }
 

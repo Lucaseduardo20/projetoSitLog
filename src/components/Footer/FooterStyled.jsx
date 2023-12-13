@@ -28,6 +28,16 @@ export const FooterContainer = styled.footer`
             font-family: Calibri;
         }
     }
+
+    @media (max-width: 800px) {
+        #footer-last-infos {
+            width: 70%;
+
+            >span {
+                font-size: 13px;
+            }
+        }
+    }
 `
 
 export const FooterContent = styled.div`
@@ -116,6 +126,17 @@ export const FooterNav = styled.div`
                     visibility: visible;
                     transform: scaleX(1);
                 }
+            }
+        }
+    }
+
+    @media (max-width: 800px) {
+        width: 90%;
+
+        ul {
+
+            li {
+                font-size: 12px;
             }
         }
     }

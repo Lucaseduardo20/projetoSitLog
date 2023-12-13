@@ -95,28 +95,65 @@ export const CotacaoForm = styled.div `
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    margin: 10px 0 0 0;
+    // border: 5px solid #B30220;
 
-    >input {
+    // align-items: center;
+    
+    .input-box {
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 40%;
-        height: 50px;
-        border: 1pt solid #707070;
-        font-size: 22px;
-        padding-left: 20px;
 
-        ::placeholder {
-            color: #A2A2A2;
+
+        label {
+            text-transform: uppercase;
+            font-weight: bold;
             font-family: Calibri;
+            color: #B30220;
         }
 
-        &:focus {
-            outline: none;
+        input {
+            width: 100%;
+            height: 50px;
+            border: 1pt solid #707070;
+            font-size: 22px;
+            border-radius: 10px;
+            color: #3B3A3A;
+            padding-left: 20px;
+            border: 1px solid #B30220;
+    
+            ::placeholder {
+                color: #A2A2A2;
+                font-family: Calibri;
+            }
+    
+            @media (min-width: 1024px) and (max-width: 1250px) {
+                width: 45%;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            @media (max-width: 800px) {
+                width: 90%;
+                height: 30px;
+                border: 1px solid #B30220;
+                font-size: 15px;
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 3px #B30220; /* Efeito de foco sutil */
+            }
         }
 
-        @media (min-width: 1024px) and (max-width: 1250px) {
-            width: 45%;
-            height: 40px;
-            font-size: 18px;
+        @media (max-width: 800px) {
+            width: 100%;
+            flex-direction: column;
+            flex-wrap: none;
+
         }
     }
 
