@@ -188,7 +188,7 @@ export const CotacaoForm = styled.div `
         flex-direction: column;
         flex-wrap: none;
         align-items: center;
-        height: 60%;
+        height: 70%;
 
         input {
             width: 100%;
