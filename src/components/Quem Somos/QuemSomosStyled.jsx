@@ -68,7 +68,7 @@ export const QuemSomosContent = styled.div `
         @media (max-width: 800px) {
             width: 90%;
             p {
-                font-size: 18px;
+                font-size: 16px;
             }
         }
         

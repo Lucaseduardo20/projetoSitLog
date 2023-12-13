@@ -151,9 +151,6 @@ export const CotacaoForm = styled.div `
 
         @media (max-width: 800px) {
             width: 100%;
-            flex-direction: column;
-            flex-wrap: none;
-
         }
     }
 
@@ -187,8 +184,9 @@ export const CotacaoForm = styled.div `
         position: absolute;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 800px) {
         flex-direction: column;
+        flex-wrap: none;
         align-items: center;
         height: 60%;
 
