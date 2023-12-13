@@ -157,9 +157,10 @@ export const ServicoItem = styled.div`
         width: 20px;
         height: 20px;
         margin-top: 10px;
-        border: none;
+        border: 1px solid red;
+        color: red;
         border-radius: 10px;
-        background-color: #d20226;
+        background-color: #FFF;
         font-size: 18px;
         font-family: Roboto;
         font-weight: bold;
