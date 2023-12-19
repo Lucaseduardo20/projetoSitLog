@@ -5,7 +5,7 @@ import { IoIosMore } from "react-icons/io";
 import { useEffect } from "react";
 import Expressa from './expressa.png'
 import Fracionada from './fracionada.png'
-import Especial from './especial.png'
+
 
 export default function ServicosComponent() {
     const [data, setData] = useState([
@@ -14,12 +14,6 @@ export default function ServicosComponent() {
             'isActive': false,
             'imagem': Fracionada,
             'texto': 'Em termos simples, a carga fracionada é um tipo de serviço no qual o embarcador paga somente pelo espaço no caminhão utilizado pela sua remessa. Dessa forma, o custo com o transporte é fracionado entre outras cargas e, portanto, diminuído.'
-        },
-        {
-            'nome': 'Especial',
-            'isActive': false,
-            'imagem': Especial,
-            'texto': 'São consideradas especiais mercadorias com necessidades específicas em relação à temperatura, umidade, que sejam frágeis, perecíveis ou muito pesadas. Medicamentos são ótimos exemplos de transporte de cargas especiais. Dessa maneira, não podem ser transportadas da forma padrão, exigindo um maior planejamento.'
         },
         {
             'nome': 'expressa',
