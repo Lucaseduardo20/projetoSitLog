@@ -57,8 +57,8 @@ export const QuemSomosContent = styled.div `
     #quem-somos-text {
         height: 85%;
         // border: 1px solid black;
-        width: 50%;
-        text-align: center;
+        width: 60%;
+        text-align: justify;
 
         p {
             font-size: 20px
@@ -71,6 +71,12 @@ export const QuemSomosContent = styled.div `
                 font-size: 16px;
             }
         }
+
+        // @media (max-height: 700px){
+        //     p {
+        //         font-size: 14px;
+        //     }
+        // }
         
     }
 

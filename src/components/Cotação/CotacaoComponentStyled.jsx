@@ -10,7 +10,7 @@ export const CotacaoContent = styled.section`
 
 export const CotacaoArticle = styled.article `
     width: 65%;
-    height: 70%;
+    height: 550px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;

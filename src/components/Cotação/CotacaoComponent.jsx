@@ -9,7 +9,7 @@ export default function CotacaoComponent() {
     const [fieldList, setFieldList] = useState([])
     const [nome, setNome] = useState()
     const [email, setEmail] = useState()
-    const [cnpj, setCnpj] = useState()
+    const [valor, setValor] = useState()
     const [telefone, setTelefone] = useState()
     const [empresa, setEmpresa] = useState()
     const [windowSize, setWindowSize] = useState({
@@ -107,9 +107,9 @@ export default function CotacaoComponent() {
                     </div>
                     <div className="input-box">
                         {isMobile &&
-                            <label htmlFor="cnpj">CPF/CNPJ</label>
+                            <label htmlFor="valor">Valor de NF</label>
                         }
-                        <input id="cnpj" type="text" className="styled-input" value={cnpj} placeholder={isMobile ? '' : 'CPF/CNPJ'} onChange={e => setCnpj(e.target.value)} onBlur={e => { manageProgress(e.target.value, 'cpf'); setCnpj(`${e.target.value.length > 11 ? cnpjMask(e.target.value) : cpfMask(e.target.value)}`) }} />
+                        <input id="cnpj" type="text" className="styled-input" value={valor} placeholder={isMobile ? '' : 'VALOR DE NF'} onChange={e => setValor(e.target.value)} onBlur={e => { manageProgress(e.target.value, 'valor')}} />
                     </div>
                     <button id="submit" onClick={e => submitCotacao()}>ENVIAR</button>
                 </CotacaoForm>

@@ -153,6 +153,21 @@ export const ServicoItem = styled.div`
         }
     }
 
+    @media (max-height: 700px){
+        height: ${props => props.servico.isActive ? '450px' : '200px'};
+
+        img {
+            width: ${props => props.servico.isActive ? '20%' : '25%'};
+            height: ${props => props.servico.isActive ? '14%' : '30%'};
+        }
+
+        >p {
+            font-size: 15px;
+            font-family: Calibri;
+            margin: 0;
+        }
+    }
+
     .know-more-button {
         width: 20px;
         height: 20px;
