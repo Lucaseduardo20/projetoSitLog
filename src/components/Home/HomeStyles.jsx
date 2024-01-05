@@ -32,15 +32,16 @@ export const HomeContent = styled.article `
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;    
+    justify-content: space-around;
 
     >p {
         color: white;
         font-size: 33px;
-        letter-spacing: 3px;
+        // letter-spacing: 1px;
         text-align: center;
         font-family: Calibri;
         margin: 0px 50px;
+        text-align: justify;
     }
 
     >button {

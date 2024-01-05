@@ -109,7 +109,7 @@ export default function CotacaoComponent() {
                         {isMobile &&
                             <label htmlFor="valor">Valor de NF</label>
                         }
-                        <input id="cnpj" type="text" className="styled-input" value={valor} placeholder={isMobile ? '' : 'VALOR DE NF'} onChange={e => setValor(e.target.value)} onBlur={e => { manageProgress(e.target.value, 'valor')}} />
+                        <input id="cnpj" type="text" className="styled-input" value={valor} placeholder={isMobile ? '' : 'Valor de NF'} onChange={e => setValor(e.target.value)} onBlur={e => { manageProgress(e.target.value, 'valor')}} />
                     </div>
                     <button id="submit" onClick={e => submitCotacao()}>ENVIAR</button>
                 </CotacaoForm>
