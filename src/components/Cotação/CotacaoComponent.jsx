@@ -12,6 +12,9 @@ export default function CotacaoComponent() {
     const [nome, setNome] = useState()
     const [email, setEmail] = useState()
     const [valor, setValor] = useState('')
+    const [altura, setAltura] = useState('')
+    const [largura, setLargura] = useState('')
+    const [peso, setPeso] = useState('')
     const [telefone, setTelefone] = useState('')
     const [empresa, setEmpresa] = useState()
     const [windowSize, setWindowSize] = useState({
@@ -39,11 +42,11 @@ export default function CotacaoComponent() {
         }
 
         setFieldList(updatedList)
-        setProgress((updatedList.length * 20))
+        setProgress((updatedList.length * 12.5))
     };
 
     const submitCotacao = async () => {
-        if (!nome || !telefone || !email || !empresa || !cnpj) {
+        if (!nome || !telefone || !email || !empresa || !valor || !altura || !peso || !largura) {
             alert('Preencha os campos corretamente!')
         } else if (!email.includes('@') || !email.includes('.com')) {
             alert('E-mail incorreto!')
@@ -58,7 +61,11 @@ export default function CotacaoComponent() {
             telefone: telefone,
             email: email,
             empresa: empresa,
-            cnpj: cnpj
+            valor: valor,
+            altura: altura,
+            largura: largura,
+            peso: peso
+
         })
 
         if (response.status === 200) {
@@ -101,7 +108,7 @@ export default function CotacaoComponent() {
                         {isMobile &&
                             <label htmlFor="telefone">Telefone</label>
                         }
-                        <InputMask id="telefone" type="text" mask={`${typeTel === 'tel' ? '(99) 9999-9999' : '(99) 99999-9999'}`} className="styled-input" value={telefone} placeholder={isMobile ? '' : 'Telefone'} onChange={e => setTelefone(e.target.value)} onBlur={(e) => {manageProgress(e.target.value, 'tel'); telOrCel(e.target.value)}} />
+                        <InputMask id="telefone" type="text" mask={`${typeTel === 'tel' ? '(99) 9999-9999' : '(99) 99999-9999'}`} className="styled-input" value={telefone} placeholder={isMobile ? '' : 'Telefone'} onChange={e => setTelefone(e.target.value)} onBlur={(e) => { manageProgress(e.target.value, 'tel'); telOrCel(e.target.value) }} />
                     </div>
                     <div className="input-box">
                         {isMobile &&
@@ -119,7 +126,40 @@ export default function CotacaoComponent() {
                         {isMobile &&
                             <label htmlFor="valor">Valor de NF</label>
                         }
-                        <input id="cnpj" type="text" className="styled-input" value={'R$ ' + valor} placeholder={isMobile ? '' : 'Valor de NF'} onChange={e => setValor(inputValueMask(e.target.value))} onBlur={e => { manageProgress(e.target.value, 'valor')}} />
+                        <input id="valor" type="text" className="styled-input" value={valor ? `R$ ${valor}` : valor} placeholder={isMobile ? '' : 'Valor de NF'} onChange={e => setValor(inputValueMask(e.target.value))} onBlur={e => { manageProgress(e.target.value, 'valor') }} />
+                    </div>
+                    <div className="input-box">
+                        {isMobile &&
+                            <label htmlFor="altura">Altura</label>
+                        }
+                        <input id="altura" type="text" className="styled-input" value={altura} placeholder={isMobile ? '' : 'Altura (cm)'} onChange={e => {
+                            const re = /^\d*$/;
+                            if (re.test(e.target.value)) {
+                                setAltura(e.target.value);
+                            }
+                        }} onBlur={e => { manageProgress(e.target.value, 'altura') }} />
+                    </div>
+                    <div className="input-box">
+                        {isMobile &&
+                            <label htmlFor="largura">Largura (cm)</label>
+                        }
+                        <input id="largura" type="text" className="styled-input" value={largura} placeholder={isMobile ? '' : 'Largura (cm)'} onChange={e => {
+                            const re = /^\d*$/;
+                            if (re.test(e.target.value)) {
+                                setLargura(e.target.value);
+                            }
+                        }} onBlur={e => { manageProgress(e.target.value, 'largura') }} />
+                    </div>
+                    <div className="input-box">
+                        {isMobile &&
+                            <label htmlFor="peso">Peso (Kg)</label>
+                        }
+                        <input id="peso" type="text" className="styled-input" value={peso} placeholder={isMobile ? '' : 'Peso (Kg)'} onChange={e => {
+                            const re = /^\d*$/;
+                            if (re.test(e.target.value)) {
+                                setPeso(e.target.value);
+                            }
+                        }} onBlur={e => { manageProgress(e.target.value, 'peso') }} />
                     </div>
                     <button id="submit" onClick={e => submitCotacao()}>ENVIAR</button>
                 </CotacaoForm>
@@ -127,8 +167,8 @@ export default function CotacaoComponent() {
                     <span>{progress}%</span>
                     <Line
                         percent={progress}
-                        strokeWidth={5}
-                        trailWidth={5}
+                        strokeWidth={isMobile ? 10 : 5}
+                        trailWidth={isMobile ? 10 : 5}
                         strokeColor={progress == 0 ? '' : '#9E1E33'}
                         trailColor="#4f0f19"
                         strokeLinecap="round"

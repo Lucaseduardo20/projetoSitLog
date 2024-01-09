@@ -84,6 +84,10 @@ export const FooterInfos = styled.div`
             }
         }
     }
+
+    @media (max-width: 800px) {
+        width: 100%;
+    }
 `
 export const FooterStreetView = styled.div`
     width: 50%;

@@ -6,11 +6,19 @@ export const CotacaoContent = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;    
+
+    @media (max-width: 1024px) {
+        height: 150vh
+    }
+
+    // @media (min-width: 1024px) and (max-width: 1250px) {
+    //     height: 90;
+    // }
 `
 
 export const CotacaoArticle = styled.article `
     width: 65%;
-    height: 550px;
+    height: 750px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -21,11 +29,11 @@ export const CotacaoArticle = styled.article `
     box-shadow: 1px 2px 26px -2px rgba(0,0,0,1);
 
     @media (max-width: 1024px) {
-        height: 70%;
+        height: 85%;
     }
 
     @media (min-width: 1024px) and (max-width: 1250px) {
-        height: 60%;
+        height: 80%;
     }
 `
 
@@ -91,7 +99,7 @@ export const CotacaoHeader = styled.div `
 
 export const CotacaoForm = styled.div `
     width: 95%;
-    height: 50%;
+    height: 65%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
