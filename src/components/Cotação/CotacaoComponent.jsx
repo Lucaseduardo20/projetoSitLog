@@ -1,24 +1,34 @@
 import { useState, useEffect } from "react";
 import { CotacaoArticle, CotacaoHeader, CotacaoContent, CotacaoForm, CotacaoProgress } from "./CotacaoComponentStyled";
-import { cnpjMask, cpfMask } from "../../assets/utils/utils";
+import { cnpjMask, cpfMask, inputValueMask } from "../../assets/utils/utils";
 import { Line } from 'rc-progress'
 import { newLeadApi } from "../../services/newLeadApi";
+import InputMask from 'react-input-mask';
+
 
 export default function CotacaoComponent() {
     const [progress, setProgress] = useState(0);
     const [fieldList, setFieldList] = useState([])
     const [nome, setNome] = useState()
     const [email, setEmail] = useState()
-    const [valor, setValor] = useState()
-    const [telefone, setTelefone] = useState()
+    const [valor, setValor] = useState('')
+    const [telefone, setTelefone] = useState('')
     const [empresa, setEmpresa] = useState()
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight,
     });
+    const [typeTel, setTypeTel] = useState()
 
 
 
+    const telOrCel = (value) => {
+        if (value.replace(/\D/g, '').length === 10) {
+            setTypeTel('tel')
+        } else {
+            setTypeTel('cel')
+        }
+    }
     const manageProgress = (value, field) => {
         let updatedList = fieldList;
 
@@ -91,7 +101,7 @@ export default function CotacaoComponent() {
                         {isMobile &&
                             <label htmlFor="telefone">Telefone</label>
                         }
-                        <input id="telefone" type="text" className="styled-input" value={telefone} placeholder={isMobile ? '' : 'Telefone'} onChange={e => setTelefone(e.target.value)} onBlur={e => manageProgress(e.target.value, 'tel')} />
+                        <InputMask id="telefone" type="text" mask={`${typeTel === 'tel' ? '(99) 9999-9999' : '(99) 99999-9999'}`} className="styled-input" value={telefone} placeholder={isMobile ? '' : 'Telefone'} onChange={e => setTelefone(e.target.value)} onBlur={(e) => {manageProgress(e.target.value, 'tel'); telOrCel(e.target.value)}} />
                     </div>
                     <div className="input-box">
                         {isMobile &&
@@ -109,7 +119,7 @@ export default function CotacaoComponent() {
                         {isMobile &&
                             <label htmlFor="valor">Valor de NF</label>
                         }
-                        <input id="cnpj" type="text" className="styled-input" value={valor} placeholder={isMobile ? '' : 'Valor de NF'} onChange={e => setValor(e.target.value)} onBlur={e => { manageProgress(e.target.value, 'valor')}} />
+                        <input id="cnpj" type="text" className="styled-input" value={'R$ ' + valor} placeholder={isMobile ? '' : 'Valor de NF'} onChange={e => setValor(inputValueMask(e.target.value))} onBlur={e => { manageProgress(e.target.value, 'valor')}} />
                     </div>
                     <button id="submit" onClick={e => submitCotacao()}>ENVIAR</button>
                 </CotacaoForm>

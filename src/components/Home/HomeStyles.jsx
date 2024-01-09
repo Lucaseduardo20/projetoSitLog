@@ -26,8 +26,8 @@ export const HomeStyled = styled.section `
 `
 
 export const HomeContent = styled.article `
-    width: 400px;
-    height: 80%;
+    width: 310px;
+    height: 100%;
     margin: auto 40px;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@ export const HomeContent = styled.article `
         text-align: center;
         font-family: Calibri;
         margin: 0px 50px;
-        text-align: justify;
+        text-align: center;
     }
 
     >button {
