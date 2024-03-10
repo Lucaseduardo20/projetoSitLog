@@ -27,7 +27,6 @@ export const inputValueMask = (value, casas) => {
     v = v.replace(/\D/g, ""); //Remove tudo o que não é dígito
     v = v.replace(/(\d+)(\d{2})/, "$1,$2");
     v = v.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
-    // if(value < 0)
     return negativo ? `-${v}` : v;
  };
 

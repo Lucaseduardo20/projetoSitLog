@@ -15,14 +15,14 @@ export const Footer = () => {
                     <FooterInfos>
                         <img src={LogoBranco}></img>
                         <div id="infos">
-                            <span><MdOutlineLocalPhone style={{marginBottom: '-3px'}} /> (011) 96683-6931  -- (11) 3856-8620</span>
+                            <span><MdOutlineLocalPhone style={{marginBottom: '-3px'}} /> (11) 3856-8620</span>
+                            <span><FaWhatsapp style={{marginBottom: '-3px'}} /> (11) 96683-6931</span>
                             <span><MdEmail style={{marginBottom: '-3px'}} /> Sitlog@sitlog2.com.br</span>
                             <span> <MdOutlineGpsFixed style={{marginBottom: '-3px'}} /> Rua Ouro Grosso, 1115 - Parque Peruche<br /> <MdOutlineGpsFixed style={{marginBottom: '-3px'}} /> São Paulo - SP, CEP 02531-011</span>
                             <div id="icons">
-                                <FaInstagram />
-                                <FaFacebookF />
-                                <FaWhatsapp />
-                                <FaLinkedinIn />
+                                <a href="https://www.instagram.com/sitlog.transportes?igsh=Ym81Nm5wd2FrYmU3&utm_source=qr" target="_blank"><FaInstagram /></a>
+                                <a href="https://www.facebook.com/profile.php?id=61556479960972&mibextid=ZbWKwL" target="_blank"><FaFacebookF /></a>
+                                <a href="https://api.whatsapp.com/send?phone=5511966836931&text=Ol%C3%A1%2C%20estou%20interessado%20em%20seus%20servi%C3%A7os!" target="_blank"><FaWhatsapp /></a>
                             </div>
                         </div>
                     </FooterInfos>

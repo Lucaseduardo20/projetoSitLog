@@ -7,6 +7,7 @@ import Home from './components/Home/HomeComponent'
 import { Footer } from './components/Footer/FooterComponent'
 import ServicosComponent from './components/Serviços/Servicos'
 import { QuemSomos } from './components/Quem Somos/QuemSomos'
+import WhatsApp from './components/WhatsApp/WhatsApp'
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
       <CotacaoComponent />
       <Feedbacks />
       <Footer />
+      <WhatsApp />
     </>
   )
 }

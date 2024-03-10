@@ -15,15 +15,15 @@ export const HeaderTop = styled.div `
     display: flex;
     align-items: center;
     
-    >svg {
-        width: 25px;
-        height: 22px;
+    >a {
+        font-size: 20px;
+        color: white;
         transition: .5s;
         cursor: pointer;
         margin: 0 5px 0 0;
 
         :hover {
-            fill: red;
+            color: red;
         }
     }
 

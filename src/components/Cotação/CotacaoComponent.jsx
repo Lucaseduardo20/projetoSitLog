@@ -4,6 +4,7 @@ import { cnpjMask, cpfMask, inputValueMask } from "../../assets/utils/utils";
 import { Line } from 'rc-progress'
 import { newLeadApi } from "../../services/newLeadApi";
 import InputMask from 'react-input-mask';
+import WhatsApp from "../WhatsApp/WhatsApp";
 
 
 export default function CotacaoComponent() {
