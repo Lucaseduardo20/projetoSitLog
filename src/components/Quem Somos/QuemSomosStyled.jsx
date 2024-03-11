@@ -12,7 +12,7 @@ export const QuemSomosStyled = styled.section`
     background-position: center;
 
     @media (max-width: 800px) {
-        height: 80vh;
+        height: 90vh;
         // border: 5px double black;
         padding: 20px;
         box-shadow: 0 0 15px rgba(0,0,0,0.2);
