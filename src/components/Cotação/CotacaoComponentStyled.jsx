@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const CotacaoContent = styled.section`
     width: 100%;
     height: 100vh;
+    margin: 80px 0;
     display: flex;
     justify-content: center;
     align-items: center;    

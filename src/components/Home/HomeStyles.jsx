@@ -8,6 +8,7 @@ export const HomeStyled = styled.section `
     background-size: 100%;
     background-position: center;
     display: flex;
+    justify-content: center;
 
     @media  (max-width: 500px) {
         height: 20vh;
@@ -26,18 +27,17 @@ export const HomeStyled = styled.section `
 `
 
 export const HomeContent = styled.article `
-    width: 310px;
-    height: 100%;
+    width: 700px;
+    height: 65%;
     margin: auto 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
+    
     >p {
         color: white;
         font-size: 33px;
-        // letter-spacing: 1px;
         text-align: center;
         font-family: Calibri;
         margin: 0px 50px;
@@ -45,7 +45,7 @@ export const HomeContent = styled.article `
     }
 
     >button {
-        width: 90%;
+        width: 50%;
         height: 45px;
         border: none;
         border-radius: 30px;

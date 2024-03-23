@@ -28,7 +28,7 @@ export const QuemSomosContent = styled.div `
 
     img {
         width: 50%;
-        height: 100%;
+        height: 90%;
 
     }
 

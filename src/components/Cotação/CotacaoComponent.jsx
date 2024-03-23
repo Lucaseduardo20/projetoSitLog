@@ -107,9 +107,9 @@ export default function CotacaoComponent() {
                     </div>
                     <div className="input-box">
                         {isMobile &&
-                            <label htmlFor="telefone">Telefone</label>
+                            <label htmlFor="empresa">Empresa</label>
                         }
-                        <InputMask id="telefone" type="text" mask={`${typeTel === 'tel' ? '(99) 9999-9999' : '(99) 99999-9999'}`} className="styled-input" value={telefone} placeholder={isMobile ? '' : 'Telefone'} onChange={e => setTelefone(e.target.value)} onBlur={(e) => { manageProgress(e.target.value, 'tel'); telOrCel(e.target.value) }} />
+                        <input id="empresa" type="text" className="styled-input" value={empresa} placeholder={isMobile ? '' : 'Empresa'} onChange={e => setEmpresa(e.target.value)} onBlur={e => manageProgress(e.target.value, 'empresa')} />
                     </div>
                     <div className="input-box">
                         {isMobile &&
@@ -119,9 +119,9 @@ export default function CotacaoComponent() {
                     </div>
                     <div className="input-box">
                         {isMobile &&
-                            <label htmlFor="empresa">Empresa</label>
+                            <label htmlFor="telefone">Telefone</label>
                         }
-                        <input id="empresa" type="text" className="styled-input" value={empresa} placeholder={isMobile ? '' : 'Empresa'} onChange={e => setEmpresa(e.target.value)} onBlur={e => manageProgress(e.target.value, 'empresa')} />
+                        <InputMask id="telefone" type="text" mask={`${typeTel === 'tel' ? '(99) 9999-9999' : '(99) 99999-9999'}`} className="styled-input" value={telefone} placeholder={isMobile ? '' : 'Telefone'} onChange={e => setTelefone(e.target.value)} onBlur={(e) => { manageProgress(e.target.value, 'tel'); telOrCel(e.target.value) }} />
                     </div>
                     <div className="input-box">
                         {isMobile &&
@@ -142,9 +142,9 @@ export default function CotacaoComponent() {
                     </div>
                     <div className="input-box">
                         {isMobile &&
-                            <label htmlFor="largura">Largura (cm)</label>
+                            <label htmlFor="largura">Largura e Comprimento (cm)</label>
                         }
-                        <input id="largura" type="text" className="styled-input" value={largura} placeholder={isMobile ? '' : 'Largura (cm)'} onChange={e => {
+                        <input id="largura" type="text" className="styled-input" value={largura} placeholder={isMobile ? '' : 'Largura e Comprimento (cm)'} onChange={e => {
                             const re = /^\d*$/;
                             if (re.test(e.target.value)) {
                                 setLargura(e.target.value);

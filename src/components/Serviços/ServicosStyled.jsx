@@ -83,8 +83,8 @@ export const ServicosContent = styled.div`
 `
 
 export const ServicoItem = styled.div`
-    width: ${props => props.servico.isActive ? '220px' : '200px'};
-    height: ${props => props.servico.isActive ? '570px' : '200px'};
+    width: ${props => props.servico.isActive ? '220px' : '250px'};
+    height: ${props => props.servico.isActive ? '570px' : '250px'};
     border-radius: ${props => props.servico.isActive ? '0' : '50%'};
     background-color: white;
     display: flex;
@@ -153,7 +153,7 @@ export const ServicoItem = styled.div`
         }
     }
 
-    @media (max-height: 700px){
+    @media (max-height: 500px){
         height: ${props => props.servico.isActive ? '450px' : '200px'};
 
         img {
